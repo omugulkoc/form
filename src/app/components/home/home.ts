@@ -35,8 +35,8 @@ export class Home {
   prefill() {
     this.form.patchValue({
       details: {
-        fullName: 'Atilla Ozan',
-        email: 'atilla@example.com',
+        fullName: 'Ozan M',
+        email: 'ozanmugulkoc@hotmail.com',
         phone: '+90 5xx xxx xx xx',
         appointment: '2025-09-02T14:30',
         category: 'onemli',
