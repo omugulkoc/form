@@ -1,24 +1,85 @@
+<!-- Tam ekran ortalama -->
 <div class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
-  <div class="col-12 col-md-8 col-lg-4">
-    <div class="card shadow-sm">
+  <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+
+    <!-- Alan Seçimi (Checkbox Formu) -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-white">
+        <strong>Alanlar</strong>
+      </div>
       <div class="card-body">
-        <form [formGroup]="form" (ngSubmit)="submit()" class="d-grid gap-3">
-          
-          <app-simple-form formControlName="details"
-                           [visibility]="visibility"></app-simple-form>
-
-          <div class="d-flex gap-2 justify-content-end mt-3">
-            <button type="button" class="btn btn-outline-secondary" (click)="form.reset()">Sıfırla</button>
-            <button type="button" class="btn btn-secondary" (click)="prefill()">Örnek Doldur</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
+        <form [formGroup]="visForm" class="row g-2">
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="fullName">
+              <span class="form-check-label">Ad Soyad</span>
+            </label>
           </div>
-
-          <div class="mt-3">
-            <p>Form JSON</p>
-            <pre class="bg-light p-2 border rounded small">{{ form.value | json }}</pre>
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="email">
+              <span class="form-check-label">E-posta</span>
+            </label>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="phone">
+              <span class="form-check-label">Telefon</span>
+            </label>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="appointment">
+              <span class="form-check-label">Randevu</span>
+            </label>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="category">
+              <span class="form-check-label">Kategori</span>
+            </label>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="quantity">
+              <span class="form-check-label">Adet</span>
+            </label>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="notes">
+              <span class="form-check-label">Notlar</span>
+            </label>
+          </div>
+          <div class="col-6 col-md-4">
+            <label class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName="agree">
+              <span class="form-check-label">Onay</span>
+            </label>
           </div>
         </form>
       </div>
     </div>
+
+    <!-- Asıl Form -->
+    <form [formGroup]="form" (ngSubmit)="submit()" class="d-grid gap-3">
+      <!-- 👇 visibility, checkbox formundan (visForm) geliyor -->
+      <app-simple-form
+        formControlName="details"
+        [visibility]="visibility">
+      </app-simple-form>
+
+      <div class="d-flex gap-2 justify-content-end mt-3">
+        <button type="button" class="btn btn-outline-secondary" (click)="form.reset()">Sıfırla</button>
+        <button type="button" class="btn btn-secondary" (click)="prefill()">Örnek Doldur</button>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+      </div>
+
+      <div class="mt-3">
+        <p>Form JSON</p>
+        <pre class="bg-white p-2 border rounded small">{{ form.value | json }}</pre>
+      </div>
+    </form>
+
   </div>
 </div>
