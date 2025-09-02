@@ -83,7 +83,6 @@ export class SimpleFormComponent implements ControlValueAccessor {
     });
   }
 
-  // CVA metotları
   writeValue(value: SimpleFormValue | null): void {
     if (value) {
       this.form.setValue(value, { emitEvent: false });
