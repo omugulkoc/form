@@ -13,14 +13,14 @@ export class Home {
   private fb = inject(NonNullableFormBuilder);
 
    visForm = this.fb.group({
-    fullName:    this.fb.control(true),
+    fullName:    this.fb.control(false),
     email:       this.fb.control(true),
-    phone:       this.fb.control(true),
-    appointment: this.fb.control(true),
+    phone:       this.fb.control(false),
+    appointment: this.fb.control(false),
     category:    this.fb.control(false),
-    quantity:    this.fb.control(true),
+    quantity:    this.fb.control(false),
     notes:       this.fb.control(false),
-    agree:       this.fb.control(true),
+    agree:       this.fb.control(false),
   });
 
    form = this.fb.group({

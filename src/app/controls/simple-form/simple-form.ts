@@ -35,14 +35,14 @@ export interface SimpleFormValue {
 export class SimpleFormComponent implements ControlValueAccessor {
   
     @Input() visibility: SimpleFormVisibility = {
-    fullName: true,
+    fullName: false,
     email: true,
-    phone: true,
-    appointment: true,
-    category: true,
-    quantity: true,
-    notes: true,
-    agree: true
+    phone: false,
+    appointment: false,
+    category: false,
+    quantity: false,
+    notes: false,
+    agree: false
   };
 
 
