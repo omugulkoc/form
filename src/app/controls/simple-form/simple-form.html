@@ -1,0 +1,70 @@
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div [formGroup]="form" class="row g-4">
+
+      <div class="col-12" *ngIf="visibility.fullName">
+        <div class="form-floating">
+          <input type="text" id="fullName" class="form-control" formControlName="fullName" placeholder="Ad Soyad">
+          <label for="fullName">Ad Soyad</label>
+        </div>
+      </div>
+
+      <div class="col-md-6" *ngIf="visibility.email">
+        <div class="form-floating">
+          <input type="email" id="email" class="form-control" formControlName="email" placeholder="E-posta">
+          <label for="email">E-posta</label>
+        </div>
+      </div>
+
+      <div class="col-md-6" *ngIf="visibility.phone">
+        <div class="form-floating">
+          <input type="text" id="phone" class="form-control" formControlName="phone" placeholder="Telefon">
+          <label for="phone">Telefon</label>
+        </div>
+      </div>
+
+      <div class="col-md-6" *ngIf="visibility.appointment">
+        <div class="form-floating">
+          <input type="datetime-local" id="appointment" class="form-control" formControlName="appointment" placeholder="Randevu">
+          <label for="appointment">Randevu</label>
+        </div>
+      </div>
+
+      <div class="col-md-6" *ngIf="visibility.category">
+        <div class="form-floating">
+          <select id="category" class="form-select" formControlName="category" placeholder="Kategori">
+            <option value="" disabled>Seçiniz</option>
+            <option value="standart">Standart</option>
+            <option value="onemli">Önemli</option>
+            <option value="acil">Acil</option>
+          </select>
+          <label for="category">Kategori</label>
+        </div>
+      </div>
+
+      <div class="col-md-4" *ngIf="visibility.quantity">
+        <div class="form-floating">
+          <input type="number" id="quantity" class="form-control" formControlName="quantity" placeholder="Adet">
+          <label for="quantity">Adet</label>
+        </div>
+      </div>
+
+      <div class="col-md-8" *ngIf="visibility.notes">
+        <div class="form-floating">
+          <textarea id="notes" class="form-control" formControlName="notes" style="height: 100px" placeholder="Notlar"></textarea>
+          <label for="notes">Notlar</label>
+        </div>
+      </div>
+
+      <div class="col-12" *ngIf="visibility.agree">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="agree" formControlName="agree">
+          <label class="form-check-label" for="agree">
+            Şartları kabul ediyorum
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
