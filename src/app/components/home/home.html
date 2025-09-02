@@ -4,7 +4,6 @@
       <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="submit()" class="d-grid gap-3">
           
-          <!-- visibility ayarı HomeComponent’ten geliyor -->
           <app-simple-form formControlName="details"
                            [visibility]="visibility"></app-simple-form>
 
